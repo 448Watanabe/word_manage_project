@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+
+<h1>{{ word.new_word }}</h1>
+<li>{{word.meaning}}</li>
+<li>{{word.reference}}</li>
+<li>{{word.note}}</li>
+<li>{{word.access}}回</li>
+
+<div>
+	<input type="checkbox" name="reference">{{word.reference}}</input>
+	<input type="checkbox" name="reference">{{word.reference}}</input>
+<div>
+
+<br><br>
+<time>First Date: {{word.first_date}}</time>
+
+</html>
+</body>

@@ -1,0 +1,3 @@
+「db.sqlite3_away_temp」は
+field追加した時にエラーが出て
+リセットする為に消した前のDBのデータ

@@ -1,0 +1,44 @@
+
+<!--
+{% if word_list %}
+	<p>Words exits</p>
+{% endif %}
+-->
+User is:
+{{user}}
+<body>
+{% if word_list %}
+    <p>Word Exists</p>
+    {% for word in word_list %}
+        <article>
+        	<li>ID: {{word.id}}</li>
+        	<li>ForLoopID: {{ forloop.counter }}</li>
+        	<li><a href="{% url 'word_manage_app:detail' word.id %}">{{ word.new_word}}</a></li>
+        	
+            <br>
+        </article>
+    	<!--
+		{% url 'word_manage_app:detail' word.id %}は
+		href="/word_manage_app/{{ word.id }/detail}
+		と同じ
+    	-->    
+    {% endfor %}
+
+{% else %}
+    <p>No words are available.</p>
+{% endif %}
+</body>
+
+{% if user.is_superuser %}
+<a href = "{% url 'admin:index' %}" target="_blank">admin index page</a>
+{% endif %}
+<!--
+'admin:word_manage_app_word_add'でadminサイトの
+ワード追加ページに移行できる
+adminサイトにも逆引き出来るviewの名前があり、
+アプリ名_モデル名_内容（注:内容はaddやdetailなど）で、逆引き出来る
+参照:https://docs.djangoproject.com/en/2.1/ref/contrib/admin/
+Reversing admin URLs
+
+target="_blank"を付けると
+-->
