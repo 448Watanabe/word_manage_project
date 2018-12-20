@@ -18,14 +18,19 @@ def index(request):
 	output = '¥n, '.join([w.meaning for w in word_list])
 	"""
 	template = loader.get_template('word_manage_app/index.html')
-	# print(word_list)
+	
 	context = {
 		'word_list' : word_list,
 	}
+
 	return HttpResponse(template.render(context, request))
 
-def word(request):
-	return HttpResponse("Test: this is view for 'word view' function")
+def staticTest(request):
+
+	template = loader.get_template('word_manage_app/staticTest.html')
+	context = {}
+	
+	return HttpResponse(template.render(context, request))
 
 def detail(request, word_id):
 	"try,exceptの中身はget_object_or_404(Word, pk=word_id)で補えるが、理解の為に以下のように書く"
