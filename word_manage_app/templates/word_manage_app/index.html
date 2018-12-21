@@ -2,68 +2,61 @@
 
 {% load static %}
 
-
 <html lang=en >
+
 <head>
     <link rel="stylesheet" type="text/css" href="{% static 'word_manage_app/style.css' %}">
+    
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
     </script>
-    <script type="text/javascript" src="{% static 'word_manage_app/tab.js'%}">
     </script>
 
-</head>
-<title>Index page</title>
+    <script src="{% static 'word_manage_app/app.js'%}"></script>
+    <script src="{% static 'word_manage_app/tab.js'%}"></script>
+    <script src="{% static 'word_manage_app/tab2.js'%}"></script>
+
     
+    <title>Index page</title>
+    
+</head>
+
 
 <header>
    <div id = "header1" >User is: {{user}}</div> <br>
-   
-
 </header>
 
 <body>
+    
 
-<div class="tab_area">
-    <label class="tab1_label" for="tab1">tab1</label>
-    <label class="tab2_label" for="tab2">tab2</label>
-    <label class="tab3_label" for="tab3">tab3</label>
-</div>
-    <div class="panel_area">
-        <div id="panel1" class="tab_panel">
-            <p>panel1</p>
+    <script>
+        console.log("{% static 'word_manage_app/tab.js'%}");
+
+        console.log(window);
+    </script>
+
+    <div class="tab_wrap">
+        <div class="tab_area">
+            <label class="tab1_label" for="panel1">tab1</label>
+            <label class="tab2_label" for="panel2">tab2</label>
         </div>
-        <div id="panel2" class="tab_panel">
-            <p>panel2</p>
-        </div>
-        <div id="panel3" class="tab_panel">
-            <p>panel3</p>
+
+        <div class="panel_area">
+            <div id="panel1" class="tab_panel">
+                <p>panel1</p>
+            </div>
+            <div id="panel2" class="tab_panel">
+                <p>panel2</p>
+            </div>
         </div>
     </div>
-</div>
+    <button>ボタン</button><br>
 
 
 
-{% if word_list %}
-    <p>Word Exists</p>
-    {% for word in word_list %}
-        <article>
-        	<li>ID: {{word.id}}</li>
-        	<li>ForLoopID: {{ forloop.counter }}</li>
-        	<li><a href="{% url 'word_manage_app:detail' word.id %}">{{ word.new_word}}</a></li>
-        	
-            <br>
-        </article>
-    	<!--
-		{% url 'word_manage_app:detail' word.id %}は
-		href="/word_manage_app/{{ word.id }/detail}
-		と同じ
-    	-->    
-    {% endfor %}
 
-{% else %}
-    <p>No words are available.</p>
-{% endif %}
+    
 </body>
+
 
 
 ---------------------------<br>

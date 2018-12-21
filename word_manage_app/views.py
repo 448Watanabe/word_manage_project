@@ -32,6 +32,15 @@ def staticTest(request):
 	
 	return HttpResponse(template.render(context, request))
 
+
+def onclickTest(request):
+
+	template = loader.get_template('word_manage_app/onclickTest.html')
+	context = {}
+	
+	return HttpResponse(template.render(context, request))
+
+
 def detail(request, word_id):
 	"try,exceptの中身はget_object_or_404(Word, pk=word_id)で補えるが、理解の為に以下のように書く"
 	try:

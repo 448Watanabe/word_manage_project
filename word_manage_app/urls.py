@@ -8,6 +8,7 @@ app_name = 'word_manage_app'
 urlpatterns = [
     path('index', views.index, name='index'),
     path('staticTest', views.staticTest, name = 'staticTest'),
+    path('onclickTest', views.onclickTest, name = 'onclickTest'),
     path('<int:word_id>/detail', views.detail, name = 'detail'),
 
 ]

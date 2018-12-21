@@ -1,0 +1,20 @@
+{% if word_list %}
+        <p>Word Exists</p>
+        {% for word in word_list %}
+            <article>
+            	<li>ID: {{word.id}}</li>
+            	<li>ForLoopID: {{ forloop.counter }}</li>
+            	<li><a href="{% url 'word_manage_app:detail' word.id %}">{{ word.new_word}}</a></li>
+            	
+                <br>
+            </article>
+        	<!--
+    		{% url 'word_manage_app:detail' word.id %}は
+    		href="/word_manage_app/{{ word.id }/detail}
+    		と同じ
+        	-->    
+        {% endfor %}
+
+    {% else %}
+        <p>No words are available.</p>
+    {% endif %}

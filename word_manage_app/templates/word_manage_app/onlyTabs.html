@@ -1,0 +1,39 @@
+<style>
+.tab_wrap{width:500px; margin:80px auto;}
+.tab_area{font-size:0; margin:0 10px;}
+.tab_area label{width:150px; margin:0 5px; display:inline-block; padding:12px 0; color:#999; background:#ddd; text-align:center; font-size:13px; cursor:pointer; transition:ease 0.2s opacity;}
+
+.tab_area label:hover{opacity:0.8;background-color: red;}
+</style>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script>
+
+$("label.tab1_label").click(function(){
+		console.log("tab1_label is clicked:");
+	});
+
+function myFunction2() {
+	var element = document.getElementById("myDIV1");
+	console.log(document.all);
+	console.log(element);
+	console.log(element.classList);
+
+	var element2 = document.getElementById("myDIV2");
+	console.log(element2);
+	console.log(element2.classList);
+}
+
+console.log("myFunction2 is called here:");
+
+</script>
+
+
+<div class = "tab_wrap" id = "myDIV1">
+	<div class="tab_area" id = "myDIV2">
+		<label class="tab1_label", for="tab1", onclick="myFunction2()">tab1</label>
+		<label class="tab2_label" for="tab2">tab2</label>
+		<label class="tab3_label" for="tab3">tab3</label>
+	</div>
+</div>

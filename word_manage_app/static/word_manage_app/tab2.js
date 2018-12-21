@@ -1,7 +1,5 @@
-$("button").on("click", function(){
-	
-	alert("tab custmization js is called here");
-	console.log("tab custmization js is called here");
+$(".tab_panel").on("click",function(){
+	console.log("onclick function is called:");
 
 	var $th = $(this).index();
 	$(".tab_label").removeClass("active");
@@ -10,4 +8,4 @@ $("button").on("click", function(){
 	$(".tab_panel").eq($th).addClass("active");
 });
 
-console.log("tab.js is laoded:");
+console.log("tab2.js is loaded:");
